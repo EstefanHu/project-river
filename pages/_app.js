@@ -1,11 +1,10 @@
 import '../styles/globals.css';
-import { ThemeProvider } from 'styled-components';
-import theme from '../shared/theme';
+import { StateProvider } from '../state'
 
 function MyApp({ Component, pageProps }) {
-  return <ThemeProvider theme={theme}>
+  return <StateProvider>
     <Component {...pageProps} />
-  </ThemeProvider>
-}
+  </StateProvider>
+};
 
 export default MyApp
