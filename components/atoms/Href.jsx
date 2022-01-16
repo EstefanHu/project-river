@@ -3,26 +3,30 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-const StyledRouter = styled(Link)`
+const StyledHref = styled.a`
     font-size: 1rem;
     font-weight: bold;
+    cursor: pointer;
+    margin: 0 15px;
     transition: 0.3s;
     &:hover {
-        color: $redPrimary;
+        color: ${props => props.theme.redPrimary};
     }
 `;
 
-const Router = ({ url, label }) => (
-    <StyledRouter href={url}>
-        {label}
-    </StyledRouter>
+const Href = ({ url, label }) => (
+    <Link href={url} passHref>
+        <StyledHref>
+            {label}
+        </StyledHref>
+    </Link>
 );
 
-Router.propTypes = {
+Href.propTypes = {
     /** Internal link */
     url: PropTypes.string.isRequired,
-    /** Router text */
+    /** Href text */
     label: PropTypes.string.isRequired
 };
 
-export default Router;
+export default Href;

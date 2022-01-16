@@ -5,7 +5,12 @@ import mainReducer from './reducers';
 import mainActions from './actions';
 
 const initState = {
-
+    auth: {
+        isLoading: false,
+        isLoggedIn: false,
+        isAuthing: false,
+        authErrorMessage: '',
+    }
 };
 
 const StateContext = createContext(initState);

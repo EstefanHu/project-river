@@ -1,6 +1,8 @@
-import formatReducer from "./format";
+import authReducer from './auth';
+import formatReducer from './format';
 
-const mainReducer = ({ format }, action) => ({
+const mainReducer = ({ auth,format }, action) => ({
+    auth: authReducer(auth, action),
     format: formatReducer(format, action)
 });
 

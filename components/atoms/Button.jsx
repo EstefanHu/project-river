@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const StyledAction = styled.button`
-    border: 2px solid ${props => props.theme.redPrimary},
-    backround-color: ${props => props.theme.redPrimary},
-    color: white,
+    border: 2px solid ${props => props.theme.redPrimary};
+    background-color: ${props => props.theme.redPrimary};
+    color: white;
     font-size: 1rem;
     font-weight: bold;
     height: 35px;
