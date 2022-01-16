@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Logo from '../atoms/Logo';
+import HeaderLinks from '../molecules/HeaderLinks';
 
 const StyledHeader = styled.header`
     position: fixed;
@@ -22,8 +23,10 @@ const Header = () => {
     return (
         <StyledHeader>
             <Logo />
+
+            <HeaderLinks />
         </StyledHeader>
-    )
+    );
 };
 
 export default Header;

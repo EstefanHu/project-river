@@ -1,19 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
 
-import Header from '../components/shared/header';
-
-const StyledIndex = styled.div`
-    display: flex;
-`;
+import LandingTemplate from '../components/templates/LandingTemplate';
 
 const Index = () => {
 
-    return (
-        <StyledIndex>
-            <Header />
-        </StyledIndex>
-    )
+    return <LandingTemplate />
 };
 
 export default Index;
