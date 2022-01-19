@@ -19,7 +19,7 @@ const authReducer = (state, { type, payload }) => {
                 isAuthing: true
             };
 
-        case 'STOP_AUTHING':
+        case 'END_AUTHING':
             return {
                 ...state,
                 isAuthing: false,

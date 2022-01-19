@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import Header from '../organisms/Header';
 import Article from '../molecules/Article';
+import Overlay from '../atoms/Overlay';
 
 const StyledLandingTemplate = styled.div`
     height: 100vh;
@@ -18,6 +19,7 @@ const LandingTemplate = () => {
         <StyledLandingTemplate>
             <Header />
             {/* <Article composition={ } /> */}
+            <Overlay />
         </StyledLandingTemplate>
     );
 };
