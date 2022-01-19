@@ -3,7 +3,10 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { useGlobalState } from '../../../state';
 
-const StyledRegister = styled.form``;
+const StyledRegister = styled.form`
+    display: flex;
+    flex-direction: column;
+`;
 
 const Register = () => {
 

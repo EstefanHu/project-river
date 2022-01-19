@@ -3,10 +3,18 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const StyledInputText = styled.input`
+    display: flex;
+    flex-direction: column;
     height: 35px;
+    width: 100%;
+    margin-top: 3px;
     padding: 0 12px;
-    border: 2px solid ${({ theme }) => theme.redPrimary};
-    border-radius: 10px;
+    border: 2px solid lightgrey;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.3s;
+    &:hover { border-color: grey; }
+    &:focus { border-color: ${({ theme }) => theme.redPrimary} }
 `;
 
 const InputText = ({ type, value, setValue }) => (

@@ -3,7 +3,7 @@ import { useGlobalState } from '../../state';
 import styled from 'styled-components';
 
 const StyledOverlay = styled.div`
-    height: 100vh;
+    height: 100%;
     width: 100vw;
     z-index: 99;
     position: absolute;

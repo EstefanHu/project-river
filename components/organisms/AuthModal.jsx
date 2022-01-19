@@ -3,18 +3,26 @@ import { useGlobalState } from '../../state';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
+import Close from '../atoms/Close';
 import SignIn from './forms/SignIn';
 import Register from './forms/Register';
 
 const StyledAuthModal = styled.div`
     position: fixed;
-    margin: 35vh auto 0;
+    top: 100%;
+    left: 50%;
+    margin-left: -250px;
     z-index: 100;
-    background-color: pink;
     width: 500px;
     box-shadow: ${({ theme }) => theme.boxShadow};
     border-radius: 10px;
-    padding: 20px 30px;
+    padding: 30px 40px;
+    background-color: white;
+    outline: none;
+    transition: 0.3s;
+    ${({ isAuthing }) => isAuthing && `
+        top: 40%;
+    `}
 `;
 
 const AuthModal = () => {
@@ -25,8 +33,15 @@ const AuthModal = () => {
     const [hasAccount, setHasAccount] = useState(true);
 
     return (
-        <StyledAuthModal>
-
+        <StyledAuthModal
+            tabIndex={isAuthing ? 1 : -1}
+            isAuthing={isAuthing}
+        >
+            <Close close={endAuthing} />
+            {hasAccount
+                ? <SignIn setHasAccount={setHasAccount} />
+                : <Register setHasAccount={setHasAccount} />
+            }
         </StyledAuthModal>
     );
 };

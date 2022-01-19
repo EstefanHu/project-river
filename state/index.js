@@ -8,7 +8,7 @@ const initState = {
     auth: {
         isLoading: false,
         isLoggedIn: false,
-        isAuthing: false,
+        isAuthing: true,
         authErrorMessage: '',
     }
 };
