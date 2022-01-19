@@ -1,7 +1,7 @@
 import React from 'react';
+import Link from 'next/link';
 import { useGlobalState } from '../../state';
 import styled from 'styled-components';
-import propTypes from 'prop-types';
 import { FiUser } from 'react-icons/fi';
 
 const StyledProfileImage = styled.div`
@@ -21,9 +21,13 @@ const ProfileImage = () => {
     const { state: { auth: { isLoggedIn } } } = useGlobalState();
 
     return (
-        <StyledProfileImage>
-            <FiUser size={25} />
-        </StyledProfileImage>
+        <Link href="/profile" passHref>
+            <a>
+                <StyledProfileImage>
+                    <FiUser size={25} />
+                </StyledProfileImage>
+            </a>
+        </Link>
     )
 };
 
