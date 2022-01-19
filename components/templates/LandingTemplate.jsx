@@ -15,6 +15,6 @@ const LandingTemplate = () => {
             <Header />
         </StyledLandingTemplate>
     );
-};
+}; 
 
 export default LandingTemplate;
