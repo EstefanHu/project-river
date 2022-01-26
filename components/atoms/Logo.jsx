@@ -3,9 +3,10 @@ import styled from 'styled-components';
 
 const StyledLogo = styled.h1`
     font-size: 2vw;
+    color: ${({ theme }) => theme.textColor};
 
     span {
-        color: ${props => props.theme.redPrimary};
+        color: ${({ theme }) => theme.redPrimary};
         font-size: 0.85vw;
         text-transform: uppercase;
     }

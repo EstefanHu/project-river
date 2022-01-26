@@ -10,6 +10,9 @@ const initState = {
         isLoggedIn: false,
         isAuthing: true,
         authErrorMessage: '',
+    },
+    format: {
+        isDark: false
     }
 };
 
@@ -23,9 +26,11 @@ export const StateProvider = ({ children }) => {
     Object.keys(mainActions)
         .forEach(actionName => actions[actionName] = mainActions[actionName](dispatch));
 
+    const colorMode = state.format.isDark ? theme.dark : theme.light;
+
     return (
         <StateContext.Provider value={{ state, ...actions }}>
-            <ThemeProvider theme={theme}>
+            <ThemeProvider theme={{ ...theme, ...colorMode }}>
                 {children}
             </ThemeProvider>
         </StateContext.Provider>

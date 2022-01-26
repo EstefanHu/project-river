@@ -3,12 +3,11 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const StyledInputText = styled.input`
-    display: flex;
-    flex-direction: column;
+    font-size: 1rem;
     height: 35px;
     width: 100%;
     margin-top: 3px;
-    padding: 0 12px;
+    padding: 0 8px;
     border: 2px solid lightgrey;
     border-radius: 5px;
     outline: none;

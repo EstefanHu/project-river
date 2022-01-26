@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const StyledAction = styled.button`
-    border: 2px solid ${props => props.theme.redPrimary};
-    background-color: ${props => props.theme.redPrimary};
+    border: 2px solid ${({ theme }) => theme.redPrimary};
+    background-color: ${({ theme }) => theme.redPrimary};
     color: white;
     font-size: 1rem;
     font-weight: bold;
@@ -15,12 +15,16 @@ const StyledAction = styled.button`
     cursor: pointer;
     &:hover {
         background-color: white;
-        color: ${props => props.theme.redPrimary};
-    }   
+        color: ${({ theme }) => theme.redPrimary};
+    }
+    ${({ style }) => style}
 `;
 
-const Action = ({ action, label }) => (
-    <StyledAction onClick={action}>
+const Action = ({ action, label, style }) => (
+    <StyledAction
+        style={style}
+        onClick={action}
+    >
         {label}
     </StyledAction>
 );

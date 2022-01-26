@@ -1,6 +1,13 @@
 const colors = {
     redPrimary: '#940a0a',
-    backgroundWhite: 'rgb(250, 246, 246)',
+    light: {
+        textColor: 'rgb(32, 33, 36)',
+        backgroundColor: 'rgb(250, 246, 246)',
+    },
+    dark: {
+        textColor: 'rgb(250, 246, 246)',
+        backgroundColor: 'rgb(32, 33, 36)'
+    }
 };
 
 const effects = {

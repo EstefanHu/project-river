@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 
 import Label from '../atoms/Label';
 import InputText from '../atoms/InputText'
@@ -38,13 +38,13 @@ const FormField = ({ label, type, value, setValue }) => {
 
 FormField.propTypes = {
     /** Label text display */
-    label: PropTypes.string.isRequired,
+    label: propTypes.string.isRequired,
     /** Type of input */
-    type: PropTypes.string.isRequired,
+    type: propTypes.string.isRequired,
     /** Value of input */
-    value: PropTypes.string.isRequired,
+    value: propTypes.string.isRequired,
     /** Func for setting value of input */
-    setValue: PropTypes.func.isRequired
+    setValue: propTypes.func.isRequired
 };
 
 export default FormField;

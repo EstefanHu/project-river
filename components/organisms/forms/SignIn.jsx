@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
 import styled from 'styled-components';
 import propTypes from 'prop-types';
 import { useGlobalState } from '../../../state';
@@ -6,13 +7,14 @@ import { useGlobalState } from '../../../state';
 import H1 from '../../atoms/H1';
 import FormField from '../../molecules/FormField';
 import Button from '../../atoms/Button';
+import Note from '../../atoms/Note';
 
 const StyledSignIn = styled.form`
     display: flex;
     flex-direction: column;
 `;
 
-const SignIn = () => {
+const SignIn = ({ setHasAccount }) => {
     const { signIn } = useGlobalState();
     const [state, setState] = useState({ email: '', password: '' });
 
@@ -21,18 +23,18 @@ const SignIn = () => {
             <H1>Sign in</H1>
 
             {FIELDS.map((f) => {
-                const name = f.type;
+                const { key, label, type } = f;
 
                 return (
                     <FormField
-                        key={name}
-                        label={f.label}
-                        type={name}
-                        value={state[name]}
+                        key={key}
+                        label={label}
+                        type={type}
+                        value={state[key]}
                         setValue={(value) => {
                             const newState = state;
-                            newState[name] = value;
-                            setState(newState);
+                            newState[key] = value;
+                            setState({ ...newState });
                         }}
                     />
                 )
@@ -41,7 +43,16 @@ const SignIn = () => {
             <Button
                 action={signIn}
                 label='SIGN IN'
+                style={{ height: '40px', margin: '15px 0px' }}
             />
+
+            <Note>
+                Don&#39;t have an account?
+                <button
+                    type="button"
+                    onClick={() => setHasAccount(false)}
+                >sign up</button>
+            </Note>
         </StyledSignIn>
     );
 };
@@ -53,10 +64,12 @@ SignIn.propTypes = {
 
 const FIELDS = [
     {
+        key: 'email',
         label: 'email address',
         type: 'email',
     },
     {
+        key: 'password',
         label: 'password',
         type: 'password'
     }

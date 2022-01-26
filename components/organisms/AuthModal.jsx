@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useGlobalState } from '../../state';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 
 import Close from '../atoms/Close';
 import SignIn from './forms/SignIn';
@@ -21,7 +20,7 @@ const StyledAuthModal = styled.div`
     outline: none;
     transition: 0.3s;
     ${({ isAuthing }) => isAuthing && `
-        top: 40%;
+        top: 30%;
     `}
 `;
 
