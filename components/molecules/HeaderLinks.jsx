@@ -11,14 +11,14 @@ const StyledHeaderLinks = styled.span`
     display:flex;
     align-items: center;
     width: 370px;
-    &>*:not(a) {
+    &>:last-child {
         margin-left: auto;
     }
 `;
 
 const HeaderLinks = () => {
     const {
-        state: { auth: { isLoggedIn, isAuthing } },
+        state: { auth: { user, isAuthing } },
         startAuthing
     } = useGlobalState();
     const router = useRouter();
@@ -35,7 +35,7 @@ const HeaderLinks = () => {
                         />
                     ))
             }
-            {isLoggedIn ? <ProfileImage /> : <Button action={startAuthing} label='login' />}
+            {user ? <ProfileImage /> : <Button action={startAuthing} label='login' />}
         </StyledHeaderLinks>
     );
 };

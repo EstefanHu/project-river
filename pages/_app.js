@@ -1,5 +1,5 @@
-import firebase from 'firebase/compat/app';
 import React from 'react';
+import firebase from 'firebase/compat/app';
 import '../lib/globals.css';
 import { StateProvider } from '../state'
 import { clientCredentials } from '@lib/firebaseCredentials';

@@ -23,7 +23,20 @@ const authReducer = (state, { type, payload }) => {
                 ...state,
                 isAuthing: false,
                 authErrorMessage: ''
-            }
+            };
+
+        case 'SET_USER':
+            return {
+                ...state,
+                authErrorMessage: '',
+                user: payload,
+            };
+
+        case 'CLEAR_USER':
+            return {
+                ...state,
+                user: null
+            };
 
         default:
             return state;

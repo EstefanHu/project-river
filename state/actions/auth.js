@@ -1,4 +1,4 @@
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
 import { getFirestore, setDoc, doc, serverTimestamp } from 'firebase/firestore';
 
 export const addAuthErrorMessage = dispatch => (message) => dispatch({ type: 'ADD_ERROR', payload: message })
@@ -7,12 +7,32 @@ export const clearAuthErrorMessage = dispatch => () => dispatch({ type: 'CLEAR_A
 export const startAuthing = dispatch => () => dispatch({ type: 'START_AUTHING' });
 export const endAuthing = dispatch => () => dispatch({ type: 'END_AUTHING' });
 
-export const signIn = dispatch => ({ email, password }) => {
+export const checkAuthState = dispatch => () => {
     try {
+        onAuthStateChanged(getAuth(), (user) => {
+            if (!user) return dispatch({ type: 'CLEAR_USER' });
+            dispatch({ type: 'SET_USER', payload: user.uid });
+        })
+    } catch ({ code }) {
+        let message;
+        switch (code) {
+            default:
+                message = 'something went wrong';
+        }
+        dispatch({ type: 'ADD_ERROR', payload: message });
+    }
+}
 
-    } catch (ex) {
-        console.log(ex);
-        dispatch({ type: 'ADD_ERROR', payload: ex.message });
+export const signIn = dispatch => async ({ email, password }) => {
+    try {
+        await signInWithEmailAndPassword(getAuth(), email, password);
+    } catch ({ code }) {
+        let message;
+        switch (code) {
+            default:
+                message = 'something went wrong';
+        }
+        dispatch({ type: 'ADD_ERROR', payload: message });
     };
 };
 

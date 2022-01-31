@@ -7,9 +7,9 @@ import mainActions from './actions';
 const initState = {
     auth: {
         isLoading: false,
-        isLoggedIn: false,
         isAuthing: true,
         authErrorMessage: '',
+        user: null,
     },
     format: {
         isDark: false
