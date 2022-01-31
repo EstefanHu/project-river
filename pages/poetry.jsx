@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
 import { useGlobalState } from '@state';
-import ProfileTemplate from '@templates/ProfileTemplate';
 
-const Profile = () => {
+import PoetryTemplate from '@templates/PoetryTemplate';
+
+const Poetry = () => {
     const { checkAuthState } = useGlobalState();
 
     useEffect(checkAuthState, []);
 
-    return <ProfileTemplate />
+    return <PoetryTemplate />
 };
 
-export default Profile;
+export default Poetry;

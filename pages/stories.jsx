@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
 import { useGlobalState } from '@state';
-import ProfileTemplate from '@templates/ProfileTemplate';
 
-const Profile = () => {
+import StoriesTemplate from '@templates/StoriesTemplate';
+
+const Stories = () => {
     const { checkAuthState } = useGlobalState();
 
     useEffect(checkAuthState, []);
 
-    return <ProfileTemplate />
+    return <StoriesTemplate />
 };
 
-export default Profile;
+export default Stories;

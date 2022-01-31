@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import { useGlobalState } from '@state';
-import ProfileTemplate from '@templates/ProfileTemplate';
+import DevotionsTemplate from '@templates/DevotionsTemplate';
 
-const Profile = () => {
+const Devotions = () => {
     const { checkAuthState } = useGlobalState();
 
     useEffect(checkAuthState, []);
 
-    return <ProfileTemplate />
+    return <DevotionsTemplate />
 };
 
-export default Profile;
+export default Devotions;

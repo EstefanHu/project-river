@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useGlobalState } from '@state';
 
-import LandingTemplate from '../components/templates/LandingTemplate';
+import LandingTemplate from '@templates/LandingTemplate';
 
 const Index = () => {
     const { checkAuthState } = useGlobalState();

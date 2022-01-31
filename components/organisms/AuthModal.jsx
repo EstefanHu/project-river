@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { useGlobalState } from '../../state';
+import { useGlobalState } from '@state';
 import styled from 'styled-components';
 
-import Close from '../atoms/Close';
-import SignIn from './forms/SignIn';
-import Register from './forms/Register';
+import Close from '@atoms/Close';
+import SignIn from '@forms/SignIn';
+import Register from '@forms/Register';
 
 const StyledAuthModal = styled.div`
     position: fixed;

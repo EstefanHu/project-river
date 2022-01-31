@@ -1,5 +1,5 @@
 import React from 'react';
-import { useGlobalState } from '../../state';
+import { useGlobalState } from '@state';
 import styled from 'styled-components';
 
 const StyledOverlay = styled.div`

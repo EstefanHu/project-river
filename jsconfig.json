@@ -21,7 +21,10 @@
         "/lib/*"
       ],
       "@state": [
-        "/state/index"
+        "/lib/state/index"
+      ],
+      "@forms/*": [
+        "/components/organisms/forms/*"
       ]
     }
   }
