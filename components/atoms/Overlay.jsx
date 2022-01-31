@@ -12,7 +12,7 @@ const StyledOverlay = styled.div`
     left: 0;
     right: 0;
     visibility: hidden;
-    transition: 0.3s;
+    transition: background-color 0.3s;
     ${({ isShowing }) => isShowing && `
         background-color: rgba(0, 0, 0, 0.3);
         visibility: visible;

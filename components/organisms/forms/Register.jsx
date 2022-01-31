@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import propTypes from 'prop-types';
 import { useGlobalState } from '../../../state';
 
-import FormField from '../../molecules/FormField';
-import H1 from '../../atoms/H1';
-import Button from '../../atoms/Button';
-import Note from '../../atoms/Note';
-import ErrorMessage from '../../atoms/ErrorMessage';
+import FormField from '@components/molecules/FormField';
+import H1 from '@components/atoms/H1';
+import Submit from '@components/atoms/Submit';
+import Note from '@components/atoms/Note';
+import ErrorMessage from '@components/atoms/ErrorMessage';
 
 const StyledRegister = styled.form`
     display: flex;
@@ -21,21 +21,20 @@ const Register = ({ setHasAccount }) => {
     } = useGlobalState()
 
     const [state, setState] = useState({
-        firstName: '',
-        lastName: '',
-        emailAddress: '',
-        password: '',
-        confirmPassword: ''
+        firstName: 'Justin',
+        lastName: 'Hu',
+        email: 'jh@gmail.com',
+        password: 'poiupoiu',
+        confirmPassword: 'poiupoiu'
     });
 
     const handleRegister = async (e) => {
         e.preventDefault()
-        const response = await register(state);
-        console.log(response);
+        await register(state);
     }
 
     return (
-        <StyledRegister>
+        <StyledRegister onSubmit={handleRegister}>
             <H1>Register</H1>
             <ErrorMessage>{authErrorMessage}</ErrorMessage>
             {FIELDS.map((f) => {
@@ -57,9 +56,8 @@ const Register = ({ setHasAccount }) => {
                 )
             })}
 
-            <Button
-                action={handleRegister}
-                label='SIGN IN'
+            <Submit
+                label='SIGN UP'
                 style={{ height: '40px', margin: '15px 0px' }}
             />
 
@@ -91,7 +89,7 @@ const FIELDS = [
         type: 'text',
     },
     {
-        key: 'emailAddress',
+        key: 'email',
         label: 'email address',
         type: 'email'
     },

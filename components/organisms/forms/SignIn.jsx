@@ -6,7 +6,7 @@ import { useGlobalState } from '../../../state';
 
 import H1 from '../../atoms/H1';
 import FormField from '../../molecules/FormField';
-import Button from '../../atoms/Button';
+import Submit from '../../atoms/Submit';
 import Note from '../../atoms/Note';
 
 const StyledSignIn = styled.form`
@@ -40,7 +40,7 @@ const SignIn = ({ setHasAccount }) => {
                 )
             })}
 
-            <Button
+            <Submit
                 action={signIn}
                 label='SIGN IN'
                 style={{ height: '40px', margin: '15px 0px' }}

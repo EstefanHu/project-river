@@ -3,14 +3,18 @@ import styled from 'styled-components';
 import propTypes from 'prop-types';
 
 const StyledErrorMessage = styled.p`
-
+    font-weight: bold;
+    color: red;
+    font-size: 0.9rem;
+    text-align: center;
+    height: 12px;
 `;
 
-const ErrorMessage = ({ message }) => <StyledErrorMessage>{message}</StyledErrorMessage>;
+const ErrorMessage = ({ children }) => <StyledErrorMessage>{children}</StyledErrorMessage>;
 
 ErrorMessage.propTypes = {
     /** Text output for error message */
-    message: propTypes.string
+    children: propTypes.string
 };
 
 export default ErrorMessage;

@@ -4,7 +4,7 @@ import propTypes from 'prop-types';
 
 const StyledH1 = styled.h1`
     font-size: 2.5rem;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 `;
 
 const H1 = ({ children }) => <StyledH1>{children}</StyledH1>;
