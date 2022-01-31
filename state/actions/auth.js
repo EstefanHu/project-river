@@ -26,12 +26,19 @@ export const checkAuthState = dispatch => () => {
     }
 }
 
-export const signIn = dispatch => async ({ email, password }) => {
+export const signIn = dispatch => async ({ email, password }, cb) => {
+    if (!email || !password) return dispatch({ type: 'ADD_ERROR', payload: 'all fields are required' });
     try {
         await signInWithEmailAndPassword(getAuth(), email, password);
+        cb();
     } catch ({ code }) {
+        console.log(code);
         let message;
         switch (code) {
+            case 'auth/user-not-found':
+                message = 'invalid credentials';
+            case 'auth/wrong-password':
+                message = 'invalid credentials';
             default:
                 message = BASE_ERROR;
         }
@@ -39,7 +46,7 @@ export const signIn = dispatch => async ({ email, password }) => {
     };
 };
 
-export const register = dispatch => async ({ firstName, lastName, email, password, confirmPassword }) => {
+export const register = dispatch => async ({ firstName, lastName, email, password, confirmPassword }, cb) => {
     if (!firstName || !lastName || !email || !password || !confirmPassword) return dispatch({ type: 'ADD_ERROR', payload: 'all fields are required' });
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return dispatch({ type: 'ADD_ERROR', payload: 'invalid email' });
     // if (!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/.test(password)) return dispatch({ type: 'ADD_ERROR', payload: 'password too weak' })
@@ -53,7 +60,8 @@ export const register = dispatch => async ({ firstName, lastName, email, passwor
             createdAt: serverTimestamp(),
             updatedAt: serverTimestamp()
         });
-        dispatch({ type: 'REGISTER', payload: user.token })
+        dispatch({ type: 'REGISTER', payload: user.token });
+        cb();
     } catch ({ code }) {
         console.log(code);
         let message;
@@ -73,7 +81,6 @@ export const register = dispatch => async ({ firstName, lastName, email, passwor
 }
 
 export const logout = dispatch => async () => {
-    console.log('logging out')
     try {
         await signOut(getAuth());
         dispatch({ type: 'CLEAR_USER' });

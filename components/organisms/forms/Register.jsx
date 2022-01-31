@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import propTypes from 'prop-types';
-import { useGlobalState } from '../../../state';
+import { useGlobalState } from '@state';
 
-import FormField from '@components/molecules/FormField';
-import H1 from '@components/atoms/H1';
-import Submit from '@components/atoms/Submit';
-import Note from '@components/atoms/Note';
-import ErrorMessage from '@components/atoms/ErrorMessage';
+import FormField from '@molecules/FormField';
+import H1 from '@atoms/H1';
+import Submit from '@atoms/Submit';
+import Note from '@atoms/Note';
+import ErrorMessage from '@atoms/ErrorMessage';
 
 const StyledRegister = styled.form`
     display: flex;
@@ -17,20 +17,21 @@ const StyledRegister = styled.form`
 const Register = ({ setHasAccount }) => {
     const {
         state: { auth: { authErrorMessage } },
-        register
+        register,
+        endAuthing
     } = useGlobalState()
 
     const [state, setState] = useState({
-        firstName: 'Justin',
-        lastName: 'Hu',
-        email: 'jh@gmail.com',
-        password: 'poiupoiu',
-        confirmPassword: 'poiupoiu'
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: '',
+        confirmPassword: ''
     });
 
     const handleRegister = async (e) => {
         e.preventDefault()
-        await register(state);
+        await register(state, endAuthing);
     }
 
     return (

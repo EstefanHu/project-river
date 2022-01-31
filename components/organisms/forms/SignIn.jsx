@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import Link from 'next/link';
 import styled from 'styled-components';
 import propTypes from 'prop-types';
-import { useGlobalState } from '../../../state';
+import { useGlobalState } from '@state';
 
-import H1 from '../../atoms/H1';
-import FormField from '../../molecules/FormField';
-import Submit from '../../atoms/Submit';
-import Note from '../../atoms/Note';
+import FormField from '@molecules/FormField';
+import H1 from '@atoms/H1';
+import Submit from '@atoms/Submit';
+import Note from '@atoms/Note';
+import ErrorMessage from '@atoms/ErrorMessage';
 
 const StyledSignIn = styled.form`
     display: flex;
@@ -15,12 +15,22 @@ const StyledSignIn = styled.form`
 `;
 
 const SignIn = ({ setHasAccount }) => {
-    const { signIn } = useGlobalState();
+    const {
+        state: { auth: { authErrorMessage } },
+        signIn,
+        endAuthing
+    } = useGlobalState()
     const [state, setState] = useState({ email: '', password: '' });
 
+    const handleSignIn = async (e) => {
+        e.preventDefault();
+        await signIn(state, endAuthing);
+    };
+
     return (
-        <StyledSignIn>
+        <StyledSignIn onSubmit={handleSignIn}>
             <H1>Sign in</H1>
+            <ErrorMessage>{authErrorMessage}</ErrorMessage>
 
             {FIELDS.map((f) => {
                 const { key, label, type } = f;
@@ -41,7 +51,6 @@ const SignIn = ({ setHasAccount }) => {
             })}
 
             <Submit
-                action={signIn}
                 label='SIGN IN'
                 style={{ height: '40px', margin: '15px 0px' }}
             />
