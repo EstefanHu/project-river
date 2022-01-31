@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Logo from '../atoms/Logo';
-import HeaderLinks from '../molecules/HeaderLinks';
+import Logo from '@atoms/Logo';
+import HeaderLinks from '@molecules/HeaderLinks';
 import AuthModal from './AuthModal';
 
 const StyledHeader = styled.header`

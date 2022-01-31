@@ -29,7 +29,7 @@ const AuthModal = () => {
         state: { auth: { isAuthing } },
         endAuthing
     } = useGlobalState();
-    const [hasAccount, setHasAccount] = useState(false);
+    const [hasAccount, setHasAccount] = useState(true);
 
     return (
         <StyledAuthModal

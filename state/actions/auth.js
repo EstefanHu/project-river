@@ -1,5 +1,8 @@
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut } from 'firebase/auth';
 import { getFirestore, setDoc, doc, serverTimestamp } from 'firebase/firestore';
+import Router from 'next/router';
+
+const BASE_ERROR = 'something went wrong';
 
 export const addAuthErrorMessage = dispatch => (message) => dispatch({ type: 'ADD_ERROR', payload: message })
 export const clearAuthErrorMessage = dispatch => () => dispatch({ type: 'CLEAR_AUTH_ERROR_MESSAGE' });
@@ -17,7 +20,7 @@ export const checkAuthState = dispatch => () => {
         let message;
         switch (code) {
             default:
-                message = 'something went wrong';
+                message = BASE_ERROR;
         }
         dispatch({ type: 'ADD_ERROR', payload: message });
     }
@@ -30,7 +33,7 @@ export const signIn = dispatch => async ({ email, password }) => {
         let message;
         switch (code) {
             default:
-                message = 'something went wrong';
+                message = BASE_ERROR;
         }
         dispatch({ type: 'ADD_ERROR', payload: message });
     };
@@ -63,7 +66,24 @@ export const register = dispatch => async ({ firstName, lastName, email, passwor
             case 'auth/weak-password':
                 message = 'password too weak';
             default:
-                message = 'something went wrong';
+                message = BASE_ERROR;
+        }
+        dispatch({ type: 'ADD_ERROR', payload: message });
+    }
+}
+
+export const logout = dispatch => async () => {
+    console.log('logging out')
+    try {
+        await signOut(getAuth());
+        dispatch({ type: 'CLEAR_USER' });
+        Router.push('/');
+    } catch ({ code }) {
+        console.log(code);
+        let message;
+        switch (code) {
+            default:
+                message = BASE_ERROR
         }
         dispatch({ type: 'ADD_ERROR', payload: message });
     }

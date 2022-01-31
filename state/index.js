@@ -7,7 +7,7 @@ import mainActions from './actions';
 const initState = {
     auth: {
         isLoading: false,
-        isAuthing: true,
+        isAuthing: false,
         authErrorMessage: '',
         user: null,
     },

@@ -5,6 +5,18 @@
       "@components/*": [
         "/components/*"
       ],
+      "@atoms/*": [
+        "/components/atoms/*"
+      ],
+      "@molecules/*": [
+        "/components/molecules/*"
+      ],
+      "@organisms/*": [
+        "/components/organisms/*"
+      ],
+      "@templates/*": [
+        "/components/templates/*"
+      ],
       "@lib/*": [
         "/lib/*"
       ],
