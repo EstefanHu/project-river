@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react';
-import '../styles/globals.css';
-import firebase from '../lib/firebase';
+import React from 'react';
+import '../lib/globals.css';
 import { StateProvider } from '../state'
 
 const MyApp = ({ Component, pageProps }) => {
-  
+
 
   return (
     <StateProvider>
