@@ -1,12 +1,12 @@
 import React from 'react';
-import { useGlobalState } from '@state';
 import styled from 'styled-components';
+import { useGlobalState } from '@state';
 
 const StyledOverlay = styled.div`
     height: 100%;
     width: 100vw;
     z-index: 99;
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useGlobalState } from '@state';
 import styled from 'styled-components';
 
@@ -27,9 +27,12 @@ const StyledAuthModal = styled.div`
 const AuthModal = () => {
     const {
         state: { auth: { isAuthing } },
-        endAuthing
+        endAuthing,
+        clearAuthErrorMessage,
     } = useGlobalState();
     const [hasAccount, setHasAccount] = useState(true);
+
+    useEffect(clearAuthErrorMessage, [hasAccount])
 
     return (
         <StyledAuthModal

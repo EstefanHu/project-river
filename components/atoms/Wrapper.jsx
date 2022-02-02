@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import propTypes from 'prop-types';
+import { useGlobalState } from '@state';
 
 const StyledWrapper = styled.main`
     padding-top: 70px;
@@ -11,7 +12,12 @@ const StyledWrapper = styled.main`
     overflow: scroll;
 `;
 
-const Wrapper = ({ children }) => <StyledWrapper>{children}</StyledWrapper>;
+const Wrapper = ({ children }) => {
+    const { state: { format: { showingOverlay } } } = useGlobalState();
+    return (
+        <StyledWrapper>{children}</StyledWrapper>
+    )
+};
 
 Wrapper.propTypes = {
     // Elements inside Wrapper
