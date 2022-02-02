@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Logo from '../atoms/Logo';
-import HeaderLinks from '../molecules/HeaderLinks';
+import Logo from '@atoms/Logo';
+import HeaderLinks from '@molecules/HeaderLinks';
+import AuthModal from './AuthModal';
 
 const StyledHeader = styled.header`
     position: fixed;
-    z-index: 10;
+    z-index: 101;
     top: 0;
     height: 65px;
     width: 100vw;
@@ -16,6 +17,7 @@ const StyledHeader = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: ${({ theme }) => theme.backgroundColor};
 `;
 
 const Header = () => {
@@ -25,6 +27,7 @@ const Header = () => {
             <Logo />
 
             <HeaderLinks />
+            <AuthModal />
         </StyledHeader>
     );
 };

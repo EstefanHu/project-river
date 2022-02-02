@@ -1,16 +1,19 @@
 import React from 'react';
+import Link from 'next/link';
 import styled from 'styled-components';
 
-const StyledLogo = styled.h1`
+const StyledLogo = styled.a`
+    font-weight: bold;
     font-size: 2vw;
+    color: ${({ theme }) => theme.textColor};
 
     span {
-        color: ${props => props.theme.redPrimary};
+        color: ${({ theme }) => theme.redPrimary};
         font-size: 0.85vw;
         text-transform: uppercase;
     }
 `;
 
-const Logo = () => <StyledLogo><span>the</span>River</StyledLogo>;
+const Logo = () => <Link href='/' passHref><StyledLogo><span>the</span>River</StyledLogo></Link>;
 
 export default Logo;

@@ -1,14 +1,13 @@
 import React, { useEffect } from 'react';
 import { useGlobalState } from '@state';
+import ProfileTemplate from '@templates/ProfileTemplate';
 
-import LandingTemplate from '@templates/LandingTemplate';
-
-const Index = () => {
+const Profile = () => {
     const { checkAuthState } = useGlobalState();
 
     useEffect(checkAuthState, []);
 
-    return <LandingTemplate />
+    return <ProfileTemplate />
 };
 
-export default Index;
+export default Profile;

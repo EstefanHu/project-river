@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-const StyledAction = styled.button`
+const StyledAction = styled.input`
     border: 2px solid ${({ theme }) => theme.redPrimary};
     background-color: ${({ theme }) => theme.redPrimary};
     color: white;
@@ -20,18 +20,9 @@ const StyledAction = styled.button`
     ${({ style }) => style}
 `;
 
-const Action = ({ action, label, style }) => (
-    <StyledAction
-        style={style}
-        onClick={action}
-    >
-        {label}
-    </StyledAction>
-);
+const Action = ({ label, style }) => <StyledAction style={style} type='submit' label={label} />;
 
 Action.propTypes = {
-    /** Function to fire on button click */
-    onClick: PropTypes.func,
     /** Button text */
     label: PropTypes.string.isRequired
 }

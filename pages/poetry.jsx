@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 import { useGlobalState } from '@state';
 
-import LandingTemplate from '@templates/LandingTemplate';
+import PoetryTemplate from '@templates/PoetryTemplate';
 
-const Index = () => {
+const Poetry = () => {
     const { checkAuthState } = useGlobalState();
 
     useEffect(checkAuthState, []);
 
-    return <LandingTemplate />
+    return <PoetryTemplate />
 };
 
-export default Index;
+export default Poetry;

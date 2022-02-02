@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 import { useGlobalState } from '@state';
 
-import LandingTemplate from '@templates/LandingTemplate';
+import StoriesTemplate from '@templates/StoriesTemplate';
 
-const Index = () => {
+const Stories = () => {
     const { checkAuthState } = useGlobalState();
 
     useEffect(checkAuthState, []);
 
-    return <LandingTemplate />
+    return <StoriesTemplate />
 };
 
-export default Index;
+export default Stories;
