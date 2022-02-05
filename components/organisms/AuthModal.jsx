@@ -20,7 +20,8 @@ const StyledAuthModal = styled.div`
     outline: none;
     transition: 0.3s;
     ${({ isAuthing }) => isAuthing && `
-        top: 30%;
+        top: 50%;
+        transform: translateY(-50%);
     `}
 `;
 

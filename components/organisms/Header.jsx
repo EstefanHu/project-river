@@ -17,7 +17,7 @@ const StyledHeader = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: ${({ theme }) => theme.backgroundColor};
+    background-color: ${({ theme }) => theme.componentBackground};
 `;
 
 const Header = () => {

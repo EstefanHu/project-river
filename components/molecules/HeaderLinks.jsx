@@ -3,9 +3,9 @@ import { useRouter } from 'next/router';
 import { useGlobalState } from '@state';
 import styled from 'styled-components';
 
-import Href from '../atoms/Href';
-import Button from '../atoms/Button';
-import ProfileImage from '../atoms/ProfileImage';
+import Href from '@atoms/Href';
+import Button from '@atoms/Button';
+import ProfileImage from '@atoms/ProfileImage';
 
 const StyledHeaderLinks = styled.span`
     display:flex;

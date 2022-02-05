@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import { useGlobalState } from '@state';
-import ProfileTemplate from '@templates/ProfileTemplate';
+import WriteTemplate from '@templates/WriteTemplate';
 
-const Profile = () => {
+const Write = () => {
     const { checkAuthState } = useGlobalState();
 
     useEffect(checkAuthState, []);
 
-    return <ProfileTemplate />;
+    return <WriteTemplate />;
 };
 
-export default Profile;
+export default Write;
