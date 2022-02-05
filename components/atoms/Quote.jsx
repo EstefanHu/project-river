@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 
 const StyledQuote = styled.p`
     font-size: 0.8rem;
@@ -11,7 +11,7 @@ const Quote = ({ content }) => <StyledQuote>&quot;{content}&quot;</StyledQuote>;
 
 Quote.propTypes = {
     /** Text output for Quote */
-    content: PropTypes.string.isRequired
+    content: propTypes.string.isRequired
 };
 
 export default Quote;

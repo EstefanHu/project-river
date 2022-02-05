@@ -4,21 +4,16 @@ import { useGlobalState } from '@state';
 import Header from '@organisms/Header';
 import LeftNav from '@organisms/LeftNav';
 import Wrapper from '@atoms/Wrapper';
-import Button from '@atoms/Button';
 
-const ProfileTemplate = () => {
+const WriteTemplate = () => {
     const { logout } = useGlobalState();
 
     return (
         <Wrapper>
             <Header />
             <LeftNav />
-            <Button
-                action={logout}
-                label='log out'
-            />
         </Wrapper>
     )
 };
 
-export default ProfileTemplate;
+export default WriteTemplate;

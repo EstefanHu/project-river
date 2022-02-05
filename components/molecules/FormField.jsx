@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import propTypes from 'prop-types';
 
-import Label from '../atoms/Label';
-import InputText from '../atoms/InputText'
+import Label from '@atoms/Label';
+import InputText from '@atoms/InputText'
 
 const StyledFormField = styled.span`
     margin-bottom: 10px;

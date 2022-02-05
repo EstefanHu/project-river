@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import Paragraph from '../atoms/Paragraph';
-import Title from '../atoms/Title';
-import Image from '../atoms/Image';
+import Paragraph from '@atoms/Paragraph';
+import Title from '@atoms/Title';
+import Image from '@atoms/Image';
 
 const StyledArticle = styled.article`
     margin-top: 500px;

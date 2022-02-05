@@ -20,10 +20,7 @@ const StyledOverlay = styled.div`
 `;
 
 const Overlay = () => {
-    const {
-        state: {
-            auth: { isAuthing }
-        },
+    const { state: { auth: { isAuthing } },
         endAuthing
     } = useGlobalState();
 
