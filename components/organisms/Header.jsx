@@ -13,7 +13,7 @@ const StyledHeader = styled.header`
     width: 100vw;
     padding: 0 40px;
     background-color: white;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
     display: flex;
     justify-content: space-between;
     align-items: center;
