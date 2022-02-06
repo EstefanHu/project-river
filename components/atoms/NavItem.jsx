@@ -9,7 +9,7 @@ const StyledNavItem = styled.a`
     padding: 0 25px;
     color: ${({ isSelected, theme }) => isSelected ? theme.redPrimary : theme.textColor};
     text-transform: uppercase;
-    font-size: 0.8rem;
+    font-size: 0.95rem;
     font-weight: bold;
     transition: 0.3s;
     display: flex;
@@ -25,7 +25,7 @@ const StyledNavItem = styled.a`
     }
 `;
 
-const NavItem = ({ key, href, children }) => {
+const NavItem = ({ href, children }) => {
     const router = useRouter();
     const { pathname } = router;
 
@@ -41,6 +41,8 @@ const NavItem = ({ key, href, children }) => {
 NavItem.propTypes = {
     /** href to internal page */
     href: propTypes.string.isRequired,
+    /** React elements inside of nav item */
+    children: propTypes.node.isRequired
 };
 
 export default NavItem;

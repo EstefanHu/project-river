@@ -13,7 +13,7 @@ const StyledLeftNav = styled.nav`
     left: ${({ isShowing }) => isShowing ? '0' : '-180'}px;
     top: 0px;
     bottom: 0;
-    width: 170px;
+    width: ${({ theme }) => theme.leftNavWidth}px;
     background-color: ${({ theme }) => theme.componentBackground};
     box-shadow: 1px 0 5px rgba(0, 0, 0, 0.25);
     padding-top: 100px;

@@ -9,6 +9,8 @@ const StyledHeader = styled.header`
     position: fixed;
     z-index: 101;
     top: 0;
+    left: 0;
+    right: 0;
     height: 65px;
     width: 100vw;
     padding: 0 40px;
