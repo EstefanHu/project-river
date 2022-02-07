@@ -18,7 +18,7 @@ const WriteTemplate = () => {
 
     const renderView = (view) => {
         switch (view) {
-            case 'devotional':
+            case 'devotion':
                 return <DevotionTemplate />;
             case 'poem':
                 return <PoemTemplate />;
