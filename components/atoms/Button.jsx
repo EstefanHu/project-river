@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 
 const StyledButton = styled.button`
     border: 2px solid ${({ theme }) => theme.redPrimary};
@@ -30,10 +30,12 @@ const Button = ({ onClick, label, style }) => (
 );
 
 Button.propTypes = {
+    /** styles for custom over riding */
+    style: propTypes.object,
     /** Function to fire on button click */
-    onClick: PropTypes.func,
+    onClick: propTypes.func,
     /** Button text */
-    label: PropTypes.string.isRequired
+    label: propTypes.string.isRequired
 }
 
 export default Button;

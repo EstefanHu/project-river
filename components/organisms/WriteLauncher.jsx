@@ -16,16 +16,26 @@ const StyledWriteLauncher = styled.div`
     width: 200px;
 `;
 
+const StyledButton = styled(Button)`
+    margin-bottom: 20px;
+`;
+
+const TYPES = ['devotion', 'poem', 'story'];
+
 const WriteLauncher = () => {
     const router = useRouter();
 
     return (
         <StyledWriteLauncher>
             <Label text='create new' />
-            <Button
-                onClick={() => router.push('/write?view=devotion')}
-                label='devotion'
-            />
+            {TYPES.map((t) => (
+                <StyledButton
+                    key={t}
+                    // style={{ backgroundColor: 'white', marginBottom: '5px' }}
+                    onClick={() => router.push(`/write?view=${t}`, undefined, { shallow: true })}
+                    label={t}
+                />
+            ))}
         </StyledWriteLauncher>
     )
 };

@@ -15,7 +15,6 @@ import StoryTemplate from './write/StoryTemplate';
 const WriteTemplate = () => {
     const { logout } = useGlobalState();
     const router = useRouter();
-    const view = router.pathname.split('/')[1];
 
     const renderView = (view) => {
         switch (view) {
@@ -34,7 +33,7 @@ const WriteTemplate = () => {
         <Wrapper>
             <Header />
             <LeftNav />
-            {renderView(view)}
+            {renderView(router.query.view)}
         </Wrapper>
     )
 };
