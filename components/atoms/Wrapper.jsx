@@ -12,6 +12,7 @@ const StyledWrapper = styled.main`
     align-items: center;
     overflow: scroll;
     transition: 0.3s;
+    background-color: ${({ theme }) => theme.backgroundColor};
 `;
 
 const Wrapper = ({ children }) => {

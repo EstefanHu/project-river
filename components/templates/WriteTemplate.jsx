@@ -7,7 +7,6 @@ import LeftNav from '@organisms/LeftNav';
 import Wrapper from '@atoms/Wrapper';
 import Feed from '@atoms/feed';
 
-import Button from '@atoms/Button';
 import LauncherTemplate from './write/LauncherTemplate';
 import DevotionTemplate from './write/DevotionTemplate';
 import PoemTemplate from './write/PoemTemplate';

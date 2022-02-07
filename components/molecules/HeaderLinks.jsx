@@ -35,7 +35,7 @@ const HeaderLinks = () => {
                         />
                     ))
             }
-            {user ? <ProfileImage /> : <Button action={startAuthing} label='login' />}
+            {user ? <ProfileImage /> : <Button onClick={startAuthing} label='login' />}
         </StyledHeaderLinks>
     );
 };

@@ -10,7 +10,7 @@ import NavItem from '@atoms/NavItem';
 
 const StyledLeftNav = styled.nav`
     position: fixed;
-    left: ${({ isShowing }) => isShowing ? '0' : '-180'}px;
+    left: ${({ isShowing }) => isShowing ? '0' : '-210'}px;
     top: 0px;
     bottom: 0;
     width: ${({ theme }) => theme.leftNavWidth}px;

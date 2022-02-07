@@ -5,11 +5,11 @@ import styled from 'styled-components';
 import { useRouter } from 'next/router';
 
 const StyledNavItem = styled.a`
-    height: 55px;
-    padding: 0 25px;
+    height: 60px;
+    padding: 0 30px;
     color: ${({ isSelected, theme }) => isSelected ? theme.redPrimary : theme.textColor};
     text-transform: uppercase;
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: bold;
     transition: 0.3s;
     display: flex;
@@ -19,8 +19,8 @@ const StyledNavItem = styled.a`
         background-color: rgb(240, 240, 240);
     }
     svg {
-        height: 25px;
-        width: 25px;
+        height: 30px;
+        width: 30px;
         margin-right: 15px;
     }
 `;

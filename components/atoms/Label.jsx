@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const StyledLabel = styled.label`
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     font-weight: bold;
     color: ${({ theme }) => theme.redPrimary};
 `;

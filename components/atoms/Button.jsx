@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-const StyledAction = styled.button`
+const StyledButton = styled.button`
     border: 2px solid ${({ theme }) => theme.redPrimary};
     background-color: ${({ theme }) => theme.redPrimary};
     color: white;
@@ -20,20 +20,20 @@ const StyledAction = styled.button`
     ${({ style }) => style}
 `;
 
-const Action = ({ action, label, style }) => (
-    <StyledAction
+const Button = ({ onClick, label, style }) => (
+    <StyledButton
         style={style}
-        onClick={action}
+        onClick={onClick}
     >
         {label}
-    </StyledAction>
+    </StyledButton>
 );
 
-Action.propTypes = {
+Button.propTypes = {
     /** Function to fire on button click */
     onClick: PropTypes.func,
     /** Button text */
     label: PropTypes.string.isRequired
 }
 
-export default Action;
+export default Button;
