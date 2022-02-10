@@ -28,14 +28,9 @@ const FIELDS = [
         type: 'text',
     },
     {
-        key: 'password',
-        label: 'password',
-        type: 'password'
-    },
-    {
-        key: 'confirmPassword',
-        label: 'confirm password',
-        type: 'password'
+        key: 'body',
+        label: 'body',
+        type: 'textarea'
     }
 ]
 

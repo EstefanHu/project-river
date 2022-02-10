@@ -4,6 +4,7 @@ import propTypes from 'prop-types';
 
 import Label from '@atoms/Label';
 import InputText from '@atoms/InputText'
+import InputTextarea from '@atoms/InputTextarea';
 
 const StyledFormField = styled.span`
     margin-bottom: 10px;
@@ -23,6 +24,13 @@ const FormField = ({ label, type, value, setValue }) => {
                     value={value}
                     setValue={setValue}
                 />;
+
+            case 'textarea':
+                return <InputTextarea
+                    value={value}
+                    setValue={setValue}
+                />;
+
             default:
                 return;
         };
