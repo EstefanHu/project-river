@@ -14,7 +14,7 @@ const ProfileTemplate = () => {
             <Header />
             <LeftNav />
             <Button
-                action={logout}
+                onClick={logout}
                 label='log out'
             />
         </Wrapper>

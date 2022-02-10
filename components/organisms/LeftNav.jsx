@@ -1,31 +1,39 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useGlobalState } from '@lib/state';
+import { CgProfile } from 'react-icons/cg';
+import { FaPencilAlt } from 'react-icons/fa';
+import { IoSettingsOutline } from 'react-icons/io5';
+import { MdOutlineSpaceDashboard } from 'react-icons/md';
 
 import NavItem from '@atoms/NavItem';
 
 const StyledLeftNav = styled.nav`
     position: fixed;
-    left: ${({ isShowing }) => isShowing ? '0' : '-240'}px;
+    left: ${({ isShowing }) => isShowing ? '0' : '-210'}px;
     top: 0px;
     bottom: 0;
-    width: 220px;
+    width: ${({ theme }) => theme.leftNavWidth}px;
     background-color: ${({ theme }) => theme.componentBackground};
-    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.25);
-    padding-top: 70px;
+    box-shadow: 1px 0 5px rgba(0, 0, 0, 0.25);
+    padding-top: 100px;
     display: flex;
     flex-direction: column;
     transition: 0.3s;
+    &>:not(:last-child) {
+        margin-bottom: 5px;
+    }
     &>:last-child {
         margin-top: auto;
-        background-color: lightgrey;
+        background-color: ${({ theme }) => theme.redPrimary};
+        color: white;
     }
 `;
 
 const LINKS = [
-    { href: '/', label: 'home' },
-    { href: '/write', label: 'write' },
-    { href: '/profile', label: 'profile' },
+    { href: '/home', icon: <MdOutlineSpaceDashboard />, label: 'home' },
+    { href: '/write', icon: <FaPencilAlt />, label: 'write' },
+    { href: '/profile', icon: <CgProfile />, label: 'profile' },
 ];
 
 const LeftNav = () => {
@@ -37,13 +45,17 @@ const LeftNav = () => {
                 <NavItem
                     key={l.label}
                     href={l.href}
-                    label={l.label}
-                />
+                >
+                    {l.icon}
+                    {l.label}
+                </NavItem>
             ))}
             <NavItem
                 href='/settings'
-                label='settings'
-            />
+            >
+                <IoSettingsOutline />
+                settings
+            </NavItem>
         </StyledLeftNav>
     )
 };
