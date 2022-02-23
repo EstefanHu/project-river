@@ -3,19 +3,22 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": [
-        "/components/*"
+        "/ui/*"
       ],
       "@atoms/*": [
-        "/components/atoms/*"
+        "/ui/atoms/*"
       ],
       "@molecules/*": [
-        "/components/molecules/*"
+        "/ui/molecules/*"
       ],
       "@organisms/*": [
-        "/components/organisms/*"
+        "/ui/organisms/*"
       ],
       "@templates/*": [
-        "/components/templates/*"
+        "/templates/*"
+      ],
+      "@write/*": [
+        "/templates/write/*"
       ],
       "@lib/*": [
         "/lib/*"
@@ -24,7 +27,7 @@
         "/lib/state/index"
       ],
       "@forms/*": [
-        "/components/organisms/forms/*"
+        "/ui/organisms/forms/*"
       ]
     }
   }

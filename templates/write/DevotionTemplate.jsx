@@ -4,7 +4,8 @@ import styled from 'styled-components';
 import Form from '@organisms/Form';
 
 const StyledDevotionTemplate = styled.section`
-    
+    width: 100%;
+    padding: 20px 30px;
 `;
 
 const DevotionTemplate = () => {

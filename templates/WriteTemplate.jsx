@@ -5,12 +5,11 @@ import { useGlobalState } from '@state';
 import Header from '@organisms/Header';
 import LeftNav from '@organisms/LeftNav';
 import Wrapper from '@atoms/Wrapper';
-import Feed from '@atoms/feed';
 
-import LauncherTemplate from './write/LauncherTemplate';
-import DevotionTemplate from './write/DevotionTemplate';
-import PoemTemplate from './write/PoemTemplate';
-import StoryTemplate from './write/StoryTemplate';
+import LauncherTemplate from '@write/LauncherTemplate';
+import DevotionTemplate from '@write/DevotionTemplate';
+import PoemTemplate from '@write/PoemTemplate';
+import StoryTemplate from '@write/StoryTemplate';
 
 const WriteTemplate = () => {
     const { logout } = useGlobalState();
