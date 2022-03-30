@@ -1,14 +1,18 @@
 import React, { useEffect } from 'react';
 import { useGlobalState } from '@state';
 
-import StoriesTemplate from '@templates/StoriesTemplate';
+import PostTemplate from '@templates/PostTemplate';
 
 const Stories = () => {
     const { checkAuthState } = useGlobalState();
 
     useEffect(checkAuthState, []);
 
-    return <StoriesTemplate />
+    return (
+        <PostTemplate>
+
+        </PostTemplate>
+    )
 };
 
 export default Stories;

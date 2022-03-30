@@ -15,10 +15,7 @@
         "/ui/organisms/*"
       ],
       "@templates/*": [
-        "/templates/*"
-      ],
-      "@write/*": [
-        "/templates/write/*"
+        "/ui/templates/*"
       ],
       "@lib/*": [
         "/lib/*"

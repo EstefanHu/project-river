@@ -5,6 +5,10 @@ import propTypes from 'prop-types';
 const StyledH1 = styled.h1`
     font-size: 2.5rem;
     margin-bottom: 10px;
+
+    span {
+        color: ${({theme}) => theme.redPrimary};
+    }
 `;
 
 const H1 = ({ children }) => <StyledH1>{children}</StyledH1>;

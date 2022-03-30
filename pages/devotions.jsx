@@ -1,13 +1,17 @@
 import React, { useEffect } from 'react';
 import { useGlobalState } from '@state';
-import DevotionsTemplate from '@templates/DevotionsTemplate';
+import PostTemplate from '@templates/PostTemplate';
 
 const Devotions = () => {
     const { checkAuthState } = useGlobalState();
 
     useEffect(checkAuthState, []);
 
-    return <DevotionsTemplate />
+    return (
+        <PostTemplate>
+
+        </PostTemplate>
+    )
 };
 
 export default Devotions;

@@ -1,13 +1,17 @@
 import React, { useEffect } from 'react';
 import { useGlobalState } from '@state';
-import HomeTemplate from '@templates/HomeTemplate';
+import AppTemplate from '@templates/AppTemplate';
 
 const Home = () => {
     const { checkAuthState } = useGlobalState();
 
     useEffect(checkAuthState, []);
 
-    return <HomeTemplate />;
+    return (
+        <AppTemplate>
+            
+        </AppTemplate>
+    )
 };
 
 export default Home;

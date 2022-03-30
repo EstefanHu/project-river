@@ -1,14 +1,18 @@
 import React, { useEffect } from 'react';
 import { useGlobalState } from '@state';
 
-import PoetryTemplate from '@templates/PoetryTemplate';
+import PostTemplate from 'ui/templates/PostTemplate';
 
 const Poetry = () => {
     const { checkAuthState } = useGlobalState();
 
     useEffect(checkAuthState, []);
 
-    return <PoetryTemplate />
+    return (
+        <PostTemplate>
+
+        </PostTemplate>
+    )
 };
 
 export default Poetry;
