@@ -1,18 +1,17 @@
 import React, { useEffect } from 'react';
 import { useGlobalState } from '@state';
+import WriteTemplate from '@templates/WriteTemplate';
 
-import AppTemplate from '@templates/AppTemplate';
-
-const Write = () => {
+const Devotion = () => {
     const { checkAuthState } = useGlobalState();
 
     useEffect(checkAuthState, []);
 
     return (
-        <AppTemplate>
-            
-        </AppTemplate>
+        <WriteTemplate>
+
+        </WriteTemplate>
     )
 };
 
-export default Write;
+export default Devotion;

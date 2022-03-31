@@ -9,17 +9,6 @@ import Header from '@organisms/Header';
 import LeftNav from '@organisms/LeftNav';
 
 const PostTemplate = ({ children }) => {
-    const { state: { auth: { user } } } = useGlobalState();
-    const [isLoading, setIsLoading] = useState(true);
-    const router = useRouter();
-
-    useEffect(() => {
-        setIsLoading(true)
-        if (!user) router.push('/');
-        setIsLoading(false);
-    }, [user, router]);
-
-    if (isLoading) return <Loading />;
 
     return (
         <Wrapper>

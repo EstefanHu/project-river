@@ -5,14 +5,13 @@ import styled from 'styled-components';
 
 import Loading from '@atoms/Loading';
 import Wrapper from '@atoms/Wrapper';
-import LandingHeader from '@organisms/landing/LandingHeader';
-import LeftNav from '@organisms/LeftNav';
+import WriteHeader from '@organisms/write/WriteHeader';
 
-const StyledAppTemplate = styled.div`
+const StyledWriteTemplate = styled.div`
     width: 700px;
 `;
 
-const AppTemplate = ({ children }) => {
+const WriteTemplate = ({ children }) => {
     const { state: { auth: { user } } } = useGlobalState();
     const [isLoading, setIsLoading] = useState(true);
     const router = useRouter();
@@ -27,13 +26,12 @@ const AppTemplate = ({ children }) => {
 
     return (
         <Wrapper>
-            <LandingHeader />
-            <LeftNav />
-            <StyledAppTemplate>
+            <WriteHeader />
+            <StyledWriteTemplate>
                 {children}
-            </StyledAppTemplate>
+            </StyledWriteTemplate>
         </Wrapper>
     )
 };
 
-export default AppTemplate;
+export default WriteTemplate;

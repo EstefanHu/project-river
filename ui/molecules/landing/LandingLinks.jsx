@@ -7,7 +7,7 @@ import Href from '@atoms/Href';
 import Button from '@atoms/Button';
 import ProfileImage from '@atoms/ProfileImage';
 
-const StyledHeaderLinks = styled.span`
+const StyledLandingLinks = styled.span`
     display:flex;
     align-items: center;
     width: 370px;
@@ -16,7 +16,7 @@ const StyledHeaderLinks = styled.span`
     }
 `;
 
-const HeaderLinks = () => {
+const LandingLinks = () => {
     const {
         state: { auth: { user, isAuthing } },
         startAuthing
@@ -24,7 +24,7 @@ const HeaderLinks = () => {
     const router = useRouter();
 
     return (
-        <StyledHeaderLinks>
+        <StyledLandingLinks>
             {
                 chooseHref(router.pathname)
                     .map((l) => (
@@ -36,7 +36,7 @@ const HeaderLinks = () => {
                     ))
             }
             {user ? <ProfileImage /> : <Button onClick={startAuthing} label='login' />}
-        </StyledHeaderLinks>
+        </StyledLandingLinks>
     );
 };
 
@@ -60,4 +60,4 @@ const chooseHref = (path) => {
     };
 };
 
-export default HeaderLinks;
+export default LandingLinks;

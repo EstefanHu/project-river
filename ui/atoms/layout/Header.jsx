@@ -2,8 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Logo from '@atoms/Logo';
-import HeaderLinks from '@molecules/HeaderLinks';
-import AuthModal from './AuthModal';
 
 const StyledHeader = styled.header`
     position: fixed;
@@ -22,16 +20,11 @@ const StyledHeader = styled.header`
     background-color: ${({ theme }) => theme.componentBackground};
 `;
 
-const Header = () => {
-
-    return (
-        <StyledHeader>
-            <Logo />
-
-            <HeaderLinks />
-            <AuthModal />
-        </StyledHeader>
-    );
-};
+const Header = ({ children }) => (
+    <StyledHeader>
+        <Logo />
+        {children}
+    </StyledHeader>
+);
 
 export default Header;
